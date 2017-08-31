@@ -69,8 +69,14 @@
     <Content Include="Content\Images\user-splash-screen.png" />
     <Content Include="Content\Web.config" />
     <Content Include="packages.config" />
+    <Content Include="Screens\Clients\ViewClient.lsml.js">
+      <DependentUpon>ViewClient.lsml</DependentUpon>
+    </Content>
     <Content Include="Screens\Permissions\ViewPermission.lsml.js">
       <DependentUpon>ViewPermission.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\Providers\ViewProvider.lsml.js">
+      <DependentUpon>ViewProvider.lsml</DependentUpon>
     </Content>
     <Content Include="Screens\Roles\ViewRole.lsml.js">
       <DependentUpon>ViewRole.lsml</DependentUpon>
@@ -99,7 +105,9 @@
     </ServiceMetadataReference>
   </ItemGroup>
   <ItemGroup>
+    <LightSwitchModel Include="Properties\ApplicationData\Clients.lsml" />
     <LightSwitchModel Include="Properties\ApplicationData\Permissions.lsml" />
+    <LightSwitchModel Include="Properties\ApplicationData\Providers.lsml" />
     <LightSwitchModel Include="Properties\ApplicationData\Roles.lsml" />
     <LightSwitchModel Include="Properties\ApplicationData\Users.lsml" />
     <LightSwitchModel Include="Properties\Client.lsml">
@@ -108,9 +116,15 @@
     <LightSwitchModel Include="Properties\Proxies.lsml" />
     <LightSwitchModel Include="Screens\AddEditRolePerm.lsml" />
     <LightSwitchModel Include="Screens\AddEditUserRole.lsml" />
+    <LightSwitchModel Include="Screens\Clients\AddEditClient.lsml" />
+    <LightSwitchModel Include="Screens\Clients\BrowseClients.lsml" />
+    <LightSwitchModel Include="Screens\Clients\ViewClient.lsml" />
     <LightSwitchModel Include="Screens\Permissions\AddEditPermission.lsml" />
     <LightSwitchModel Include="Screens\Permissions\BrowsePermissions.lsml" />
     <LightSwitchModel Include="Screens\Permissions\ViewPermission.lsml" />
+    <LightSwitchModel Include="Screens\Providers\AddEditProvider.lsml" />
+    <LightSwitchModel Include="Screens\Providers\BrowseProviders.lsml" />
+    <LightSwitchModel Include="Screens\Providers\ViewProvider.lsml" />
     <LightSwitchModel Include="Screens\Roles\AddEditRole.lsml" />
     <LightSwitchModel Include="Screens\Roles\BrowseRoles.lsml" />
     <LightSwitchModel Include="Screens\Roles\ViewRole.lsml" />

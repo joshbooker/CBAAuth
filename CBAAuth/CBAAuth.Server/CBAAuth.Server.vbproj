@@ -211,6 +211,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataSources\ApplicationData\_ApplicationDataService.lsml.vb" />
     <Compile Include="My Project\AssemblyInfo.vb">
       <SubType>Code</SubType>
     </Compile>
@@ -237,6 +238,14 @@
     <LightSwitchModel Include="DataSources\ApplicationData\Permissions.lsml" />
     <LightSwitchModel Include="DataSources\ApplicationData\RolePerms.lsml" />
     <LightSwitchModel Include="DataSources\ApplicationData\UserRoles.lsml" />
+    <LightSwitchModel Include="DataSources\ApplicationData\Providers.lsml" />
+    <LightSwitchModel Include="DataSources\ApplicationData\UserPermissions.lsml">
+      <DependentUpon>Permissions.lsml</DependentUpon>
+    </LightSwitchModel>
+    <LightSwitchModel Include="DataSources\ApplicationData\UserPerms.lsml">
+      <DependentUpon>RolePerms.lsml</DependentUpon>
+    </LightSwitchModel>
+    <LightSwitchModel Include="DataSources\ApplicationData\Clients.lsml" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>

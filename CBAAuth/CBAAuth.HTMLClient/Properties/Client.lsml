@@ -46,5 +46,11 @@
     <ApplicationNavigationMethodLink
       Name="link2"
       Method="!module/Methods[showBrowsePermissions]" />
+    <ApplicationNavigationMethodLink
+      Name="link3"
+      Method="!module/Methods[showBrowseProviders]" />
+    <ApplicationNavigationMethodLink
+      Name="link4"
+      Method="!module/Methods[showBrowseClients]" />
   </Application.NavigationItems>
 </Application>
