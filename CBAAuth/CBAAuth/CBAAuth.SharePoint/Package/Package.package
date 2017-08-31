@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="a8492623-9d5c-44f4-b0f0-93905cb66abd" solutionId="a8492623-9d5c-44f4-b0f0-93905cb66abd" resetWebServer="false" sharePointProductVersion="15.0" name="CBAAuth.SharePoint" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <features>
+    <featureReference itemId="ad1dcedb-5242-4968-b591-3bde9869454f" />
+  </features>
+</package>
