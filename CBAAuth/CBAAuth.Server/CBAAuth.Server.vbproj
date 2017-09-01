@@ -242,9 +242,6 @@
     <LightSwitchModel Include="DataSources\ApplicationData\UserPermissions.lsml">
       <DependentUpon>Permissions.lsml</DependentUpon>
     </LightSwitchModel>
-    <LightSwitchModel Include="DataSources\ApplicationData\UserPerms.lsml">
-      <DependentUpon>RolePerms.lsml</DependentUpon>
-    </LightSwitchModel>
     <LightSwitchModel Include="DataSources\ApplicationData\Clients.lsml" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>

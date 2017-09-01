@@ -52,15 +52,21 @@
             ''
             ''you cannot do joins in the designer so all the guts are in code below
             ''
-            ''something like this pseudo-SQL:
-            ''Select P.Name FROM [Permissions] As P
-            ''Where P.Id IN(Select RP.PermissionId
-            ''              From RolePerms As RP
-            ''              INNER Join Roles AS R ON R.Id = RP.RoleId
-            ''              INNER Join UserRoles AS UR ON UR.RoleId = R.Id
-            ''              INNER Join Users AS U ON U.Id = UR.Id
-            ''              WHERE U.SPUser = Application.User.Email
-            ''              )
+            ''something like this T-SQL:
+            ''Declare @Application_User_Email nvarchar(max) =  N'josh@joshbooker.com';
+            ''With UserRoles As
+            ''(SELECT R.[Name] AS [Name]
+            ''  FROM   [dbo].[UserRoles] As UR
+            ''  INNER JOIN [dbo].[Users] As U On UR.[UserRole_User] = U.[Id]
+            ''  INNER JOIN [dbo].[Roles] As R On UR.[UserRole_Role] = R.[Id]
+            ''  WHERE U.[SPUser] =  @Application_User_Email
+            '')
+            ''Select Case P.Name 
+            ''FROM   [RolePerms] As RP
+            ''INNER JOIN [Roles] As R On RP.Role_RolePerm = R.Id
+            ''INNER JOIN [Permissions] As P On RP.RolePerm_Permission = P.Id
+            ''WHERE R.Name In (Select Name FROM UserRoles)
+            ''
             ''notes to self:    perhaps roles and perms could be joined into a single query to reduce one trip to db 
             ''                  profiler this to see what it's doing to SQL - PreProcessQuery can get out of hand perf issues
             ''                  if its bad then we may need to cache the user role permissions list server-side - prolly should do that anyway
