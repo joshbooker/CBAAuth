@@ -16,7 +16,7 @@
         End Sub
 
         Private Sub Users_CanInsert(ByRef result As Boolean)
-            result = UserHasPermission("Users_CanInsert")
+            result = True 'UserHasPermission("Users_CanInsert")
         End Sub
 
         Private Sub Users_CanUpdate(ByRef result As Boolean)

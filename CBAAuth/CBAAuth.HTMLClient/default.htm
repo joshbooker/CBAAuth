@@ -51,9 +51,24 @@
     <script type="text/javascript">
         $(document).ready(function () {
             msls._run()
-            .then(null, function failure(error) {
-                alert(error);
-            });
+            .then(function ()
+            {
+                /////////////////////////////////////////////////////////////////
+                //load client-side userPermissons array - happens once at startup
+                myapp.userPermissions = [];
+                myapp.activeDataWorkspace.ApplicationData.UserPermissions().execute()
+                    .then(function (p)
+                    {
+                        p.data.forEach(function (p)
+                        {
+                            myapp.userPermissions.push(p.Name);
+                        })
+                    }),
+                /////////////////////////////////////////////////////////////////
+                    function failure(error) {
+                        alert(error);
+                    }
+            })
         });
     </script>
 </body>

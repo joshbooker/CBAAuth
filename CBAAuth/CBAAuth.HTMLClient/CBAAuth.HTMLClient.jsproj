@@ -81,6 +81,9 @@
     <Content Include="Screens\Roles\ViewRole.lsml.js">
       <DependentUpon>ViewRole.lsml</DependentUpon>
     </Content>
+    <Content Include="Screens\Users\BrowseUsers.lsml.js">
+      <DependentUpon>BrowseUsers.lsml</DependentUpon>
+    </Content>
     <Content Include="Screens\Users\ViewUser.lsml.js">
       <DependentUpon>ViewUser.lsml</DependentUpon>
     </Content>
@@ -98,6 +101,10 @@
     <Content Include="Scripts\msls-2.5.4.min.js" />
     <Content Include="Scripts\winjs-1.0.js" />
     <Content Include="Scripts\winjs-1.0.min.js" />
+    <Content Include="UserCode\User.lsml.js">
+      <DependentUpon>
+      </DependentUpon>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <ServiceMetadataReference Include="..\CBAAuth.Server\CBAAuth.Server.vbproj">
