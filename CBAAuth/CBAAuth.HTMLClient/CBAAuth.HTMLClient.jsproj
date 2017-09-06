@@ -69,6 +69,9 @@
     <Content Include="Content\Images\user-splash-screen.png" />
     <Content Include="Content\Web.config" />
     <Content Include="packages.config" />
+    <Content Include="Screens\Clients\BrowseClients.lsml.js">
+      <DependentUpon>BrowseClients.lsml</DependentUpon>
+    </Content>
     <Content Include="Screens\Clients\ViewClient.lsml.js">
       <DependentUpon>ViewClient.lsml</DependentUpon>
     </Content>
@@ -77,6 +80,9 @@
     </Content>
     <Content Include="Screens\Providers\ViewProvider.lsml.js">
       <DependentUpon>ViewProvider.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\Roles\AddEditRole.lsml.js">
+      <DependentUpon>AddEditRole.lsml</DependentUpon>
     </Content>
     <Content Include="Screens\Roles\ViewRole.lsml.js">
       <DependentUpon>ViewRole.lsml</DependentUpon>

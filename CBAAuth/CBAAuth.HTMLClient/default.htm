@@ -59,16 +59,22 @@
                 myapp.activeDataWorkspace.ApplicationData.UserPermissions().execute()
                     .then(function (p)
                     {
-                        p.data.forEach(function (p)
+                        p.results.forEach(function (p)
                         {
                             myapp.userPermissions.push(p.Name);
-                        })
+                            console.log(myapp.userPermissions);
+                        });
                     }),
                 /////////////////////////////////////////////////////////////////
-                    function failure(error) {
+                    function failure(error)
+                    {
                         alert(error);
                     }
             })
+            .then(function ()
+            {
+                //console.log(myapp.userPermissions);
+            });
         });
     </script>
 </body>

@@ -1,4 +1,5 @@
-﻿Namespace LightSwitchApplication
+﻿Imports System.Linq.Expressions
+Namespace LightSwitchApplication
     Public Class ApplicationDataService
 
         Private Sub Providers_CanInsert(ByRef result As Boolean)
@@ -39,6 +40,11 @@
             result = UserHasPermission("Clients_CanDelete")
         End Sub
 
+        Private Sub Clients_Filter(ByRef filter As Expression(Of Func(Of Client, Boolean)))
+            ' filter = Function(e) e.IntegerProperty = 0
+            ' put code to filter Clients returned based on user
+        End Sub
+
         Private Function UserHasPermission(PermissionName As String) As Boolean
             Dim query As IDataServiceQueryable(Of Permission)
             query = From UPerms In Me.DataWorkspace.ApplicationData.UserPermissions()
@@ -67,9 +73,7 @@
             ''INNER JOIN [Permissions] As P On RP.RolePerm_Permission = P.Id
             ''WHERE R.Name In (Select Name FROM UserRoles)
             ''
-            ''notes to self:    perhaps roles and perms could be joined into a single query to reduce one trip to db 
-            ''                  profiler this to see what it's doing to SQL - PreProcessQuery can get out of hand perf issues
-            ''                  if its bad then we may need to cache the user role permissions list server-side - prolly should do that anyway
+            ''notes to self:     may want to cache the user role permissions list server-side
             ''                  https://blogs.msdn.microsoft.com/lightswitch/2013/07/25/use-caching-to-turbo-boost-your-lightswitch-apps-saar-shen/
 
             'get current user
